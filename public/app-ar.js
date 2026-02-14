@@ -1,0 +1,1 @@
+// Arabic Stroop Effect Test Application - class StroopTestArabic with trial setup, result recording, and email submission functionality
