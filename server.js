@@ -1,19 +1,30 @@
 const express = require('express');
+const path = require('path');
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Middleware to parse JSON
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes for language selection
-app.get('/select-language-ar-en', (req, res) => {
-    res.send('Welcome to the bilingual Stroop test - Arabic to English');
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index-ar-en.html'));
 });
 
-app.get('/select-language-en-ar', (req, res) => {
-    res.send('Welcome to the bilingual Stroop test - English to Arabic');
+app.get('/en-ar', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index-en-ar.html'));
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.get('/ar', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index-ar.html'));
+});
+
+app.get('/en', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index-en.html'));
+});
+
+app.post('/send-email', (req, res) => {
+  res.json({ message: 'Email sent' });
+});
+
+app.listen(5000, () => {
+  console.log('Server running on http://localhost:5000');
 });
