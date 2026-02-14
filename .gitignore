@@ -1,24 +1,4 @@
-# Node modules
-node_modules/
-
-# Environment variables
+node_modules
 .env
-
-# Database files
-*.db
-stroop_results.db
-
-# Log files
-*.log
-
-# macOS specific files
 .DS_Store
-
-# Editor folders
-.vscode/
-.idea/
-
-# Swap files
-*.swp
-*.swo
-*~
+*.log
