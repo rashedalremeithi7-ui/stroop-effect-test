@@ -1,1 +1,66 @@
-<!DOCTYPE html><html lang="ar"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>اختبار تأثير ستروب</title><link rel="stylesheet" href="styles-ar.css"></head><body><div id="app"></div><script src="app-ar.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار ستروب</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            direction: rtl;
+        }
+        .color-box {
+            width: 200px;
+            height: 100px;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>اختبار ستروب</h1>
+    <div id="testArea"></div>
+    <button id="startBtn">ابدأ الاختبار</button>
+
+    <script>
+        const colors = ["أحمر", "أخضر", "أزرق", "أصفر"];
+        const colorCodes = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00"];
+        let startBtn = document.getElementById('startBtn');
+        let testArea = document.getElementById('testArea');
+        let testStarted = false;
+        let currentColor;
+
+        startBtn.addEventListener('click', startTest);
+
+        function startTest() {
+            if (!testStarted) {
+                testStarted = true;
+                testArea.innerHTML = '';
+                nextColor();
+            }
+        }
+
+        function nextColor() {
+            if (!testStarted) return;
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            currentColor = colors[randomIndex];
+            testArea.style.backgroundColor = colorCodes[randomIndex];
+            testArea.innerHTML = currentColor;
+
+            setTimeout(() => {
+                nextColor();
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
