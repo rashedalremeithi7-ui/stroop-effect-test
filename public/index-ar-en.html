@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Selector</title>
+</head>
+<body>
+    <h1>اختيار اللغة</h1>
+    <select id="language-selector">
+        <option value="ar">العربية</option>
+        <option value="en">English</option>
+    </select>
+    <script>
+        const selector = document.getElementById('language-selector');
+        selector.addEventListener('change', (event) => {
+            const selectedLanguage = event.target.value;
+            // Handle language change
+            console.log('Selected language:', selectedLanguage);
+        });
+    </script>
+</body>
+</html>
