@@ -1,1 +1,6 @@
-// Arabic Stroop Effect Test Application - class StroopTestArabic with trial setup, result recording, and email submission functionality
+class StroopArabic {
+    constructor() {
+        this.words = ['أحمر', 'أزرق', 'أخضر', 'أصفر'];
+    }
+} 
+const testAr = new StroopArabic();
