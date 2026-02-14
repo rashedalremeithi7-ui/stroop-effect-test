@@ -1,22 +1,7 @@
 # Stroop Effect Test
 
-A cognitive psychology experiment measuring the Stroop effect in English and Arabic.
+A bilingual web application for psychological testing.
 
-Features:
-- Bilingual support
-- 6 practice trials
-- 40 actual trials
-- Email results
-- Performance metrics.
+## Setup:
 
-Installation:
-- Clone
-- npm install
-- configure .env
-- npm start.
-
-Technology:
-- Node.js
-- Express
-- SQLite3
-- Nodemailer.
+npm install && npm start
